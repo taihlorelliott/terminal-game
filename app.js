@@ -83,6 +83,10 @@ while (true){
 }
 
 
+//toni adding items to array
+//taihlor checking if the arrays are full
+//fiona is working on checkout is the correct selection
+
 
 
 
