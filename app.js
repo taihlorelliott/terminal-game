@@ -53,15 +53,27 @@ while (true){
         console.log(magicalStore.beauty)
         while (true){
             const beautySelection = prompt("What item would you like? ")
+            if (magicalStore.beauty.includes(beautySelection)){ //found this method on stack overflow
+            
+            } else {console.log('Error')}
         }
     }else if(department.toLowerCase() === 'organics'){
         console.log(magicalStore.organics)
-        const organicsSelection = prompt("What item would you like? ")
-
+        while (true){
+            const organicsSelection = prompt("What item would you like? ")
+            if (magicalStore.organics.includes(organicsSelection)){ //found this method on stack overflow
+            
+            } else {console.log('Error')}
+        }
     }else if(department.toLowerCase() === 'pharmacy'){
         console.log(magicalStore.pharmacy)
-        const pharmacySelection = prompt("What item would you like? ")
-
+        while (true){
+            const pharmacySelection = prompt("What item would you like? ")
+            if (magicalStore.pharmacy.includes(pharmacySelection)){ //found this method on stack overflow
+            
+            } else {console.log('Error')}
+        }
+        }
     }else if(department.toLowerCase() === 'exit'){
         console.log("Thank you for shopping with us!")
         process.exit(0)
