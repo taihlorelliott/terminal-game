@@ -39,16 +39,32 @@ if (youthful === 'y'){
 console.log('riddle')
 //solution is lipstick, seaweed, epsomsalt 
 
+const beautyItem = []
+
+const organicsItem =[]
+
+const pharmacyItem =[]
+
 while (true){
     console.log('We have three wonderful departments in our Magical Store: Beauty, Organics & Pharmacy.')
-    break//this prints this one time and then jumps out of the loop
+    // break//this prints this one time and then jumps out of the loop
     const department = prompt('What department would you like to vist? ').trim()//this takes off any white space beofore or after their input
     if (department.toLowerCase() === 'beauty'){
         console.log(magicalStore.beauty)
+        while (true){
+            const beautySelection = prompt("What item would you like? ")
+        }
     }else if(department.toLowerCase() === 'organics'){
         console.log(magicalStore.organics)
+        const organicsSelection = prompt("What item would you like? ")
+
     }else if(department.toLowerCase() === 'pharmacy'){
         console.log(magicalStore.pharmacy)
+        const pharmacySelection = prompt("What item would you like? ")
+
+    }else if(department.toLowerCase() === 'exit'){
+        console.log("Thank you for shopping with us!")
+        process.exit(0)
     }else{
         console.log("Please choose a department.")
     }
