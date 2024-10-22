@@ -128,17 +128,6 @@ if (beautyItem[0] === 'lipstick' && organicsItem[0] === 'seaweed' && pharmacyIte
 
 
 
-  
-
-
-
-
-
-
-
-//toni adding items to array
-//taihlor checking if the arrays are full
-//fiona is working on checkout is the correct selection
 
 
 
