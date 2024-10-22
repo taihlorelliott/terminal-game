@@ -36,7 +36,14 @@ if (youthful === 'y'){
     //this means it will close the game 0 means it will exit without an error
 }
 
-console.log('With each drop, the cycle of life I mend. To gain my power, collect all three in the end. These Items you seek, I cannot speak. One thrives in the tides, where the ocean is meek.') 
+console.log(`With each swallow, the cycle of life I mend
+To gain my power, collect three in the end
+These tokens you long for, I cannot plain speak
+But unlock my riddles for the items you seek
+I thrive in the current where sand and shell meet
+I come in a tube and you put me on neat
+I soothe belly inside and outside feet
+Three brought together will bring death defeat`)
 //solution is lipstick, seaweed, epsomsalt 
 
 const beautyItem = []
@@ -57,13 +64,11 @@ while (true){
             const beautySelection = prompt("What item would you like? ")
             if (magicalStore.beauty.includes(beautySelection)){ //found this method on stack overflow
              
-                const limit = 1
-                const completeBeautyItem = []
-                for (let i = 0; beautyItem.length && completeBeautyItem.length < limit; i++){
-                completeBeautyItem.push(beautyItem[i])
-                }
-                console.log(completeBeautyItem)
-            } else {console.log('Error')}
+                beautyItem.splice(0,1,beautySelection)
+                console.log('Your cart: ', beautyItem, organicsItem, pharmacyItem)
+                break;
+
+            }  else {console.log('Error')}
         }
     }else if(department.toLowerCase() === 'organics'){
         console.log(magicalStore.organics)
@@ -71,11 +76,10 @@ while (true){
             const organicsSelection = prompt("What item would you like? ")
             if (magicalStore.organics.includes(organicsSelection)){ //found this method on stack overflow
             
-                const limit = 1
-                const completeOrganicsItem = []
-                for (let i = 0; organicsItem.length && completeOrganicsItem.length < limit; i++){
-                completeOrganicsItem.push(organicsItem[i])
-                }
+                organicsItem.splice(0,1,organicsSelection)
+                console.log('Your cart: ', beautyItem, organicsItem, pharmacyItem)
+                break;
+
             } else {console.log('Error')}
         }
     }else if(department.toLowerCase() === 'pharmacy'){
@@ -84,21 +88,53 @@ while (true){
             const pharmacySelection = prompt("What item would you like? ")
             if (magicalStore.pharmacy.includes(pharmacySelection)){ //found this method on stack overflow
             
-                const limit = 1
-                const completePharmacyItem = []
-                for (let i = 0; pharmacyItem.length && completePharmacyItem.length < limit; i++){
-                completePharmacyItem.push(pharmacyItem[i])
-                }     
-            } else {console.log('Error')}
+                pharmacyItem.splice(0,1,pharmacySelection)
+                console.log('Your cart: ', beautyItem, organicsItem, pharmacyItem)
+                break;
+                
+                } else {console.log('Error')} 
+                    
+            } 
         }
-    }else if(department.toLowerCase() === 'exit'){
+    else if(department.toLowerCase() === 'exit'){
         console.log("Thank you for shopping with us!")
         process.exit(0)
     }else{
         console.log("Please choose a department.")
     }
+    if (beautyItem.length === 1 && organicsItem.length === 1 && pharmacyItem.length === 1){
+        console.log('Your cart is full!')
+        fullCart = prompt ('Would you like to continue to checkout?(y/n) ')
+            if (fullCart.toLowerCase() === 'y'){
+                break;
+            }
     }
+
     
+
+}
+    console.log(`Thank you for shopping with us, ${username}. We hope you found everything without too much trouble. Allow me to check your cart.`)
+
+if (beautyItem[0] === 'lipstick' && organicsItem[0] === 'seaweed' && pharmacyItem[0] === 'epsom salt') {
+    console.log(`Great choices, ${username}! Stew these in a cauldron and eternal life is yours!\n`)
+    console.log('YOU WIN!\n')
+    prompt('(Press ENTER to exit the store.')
+} else {
+    console.log(`These items are great, ${username}, but I'm afraid they do not make the potion of eternal life.`)
+    console.log(`Please try again next time. And enjoy your remaining ${77 - age} years!\n`)
+    console.log('GAME OVER\n')
+    prompt('(Press ENTER to exit the store.')
+}
+
+
+
+  
+
+
+
+
+
+
 
 //toni adding items to array
 //taihlor checking if the arrays are full
