@@ -36,17 +36,19 @@ if (youthful === 'y'){
     //this means it will close the game 0 means it will exit without an error
 }
 
-console.log('riddle')
+console.log('With each drop, the cycle of life I mend. To gain my power, collect all three in the end. These Items you seek, I cannot speak. One thrives in the tides, where the ocean is meek.') 
 //solution is lipstick, seaweed, epsomsalt 
 
 const beautyItem = []
 
+
 const organicsItem =[]
+
 
 const pharmacyItem =[]
 
 while (true){
-    console.log('We have three wonderful departments in our Magical Store: Beauty, Organics & Pharmacy.')
+    console.log('We have three wonderful departments in our Magical Store: Beauty, Organics, & Pharmacy.')
     // break//this prints this one time and then jumps out of the loop
     const department = prompt('What department would you like to vist? ').trim()//this takes off any white space beofore or after their input
     if (department.toLowerCase() === 'beauty'){
@@ -54,7 +56,13 @@ while (true){
         while (true){
             const beautySelection = prompt("What item would you like? ")
             if (magicalStore.beauty.includes(beautySelection)){ //found this method on stack overflow
-            
+             
+                const limit = 1
+                const completeBeautyItem = []
+                for (let i = 0; beautyItem.length && completeBeautyItem.length < limit; i++){
+                completeBeautyItem.push(beautyItem[i])
+                }
+                console.log(completeBeautyItem)
             } else {console.log('Error')}
         }
     }else if(department.toLowerCase() === 'organics'){
@@ -63,6 +71,11 @@ while (true){
             const organicsSelection = prompt("What item would you like? ")
             if (magicalStore.organics.includes(organicsSelection)){ //found this method on stack overflow
             
+                const limit = 1
+                const completeOrganicsItem = []
+                for (let i = 0; organicsItem.length && completeOrganicsItem.length < limit; i++){
+                completeOrganicsItem.push(organicsItem[i])
+                }
             } else {console.log('Error')}
         }
     }else if(department.toLowerCase() === 'pharmacy'){
@@ -71,8 +84,12 @@ while (true){
             const pharmacySelection = prompt("What item would you like? ")
             if (magicalStore.pharmacy.includes(pharmacySelection)){ //found this method on stack overflow
             
+                const limit = 1
+                const completePharmacyItem = []
+                for (let i = 0; pharmacyItem.length && completePharmacyItem.length < limit; i++){
+                completePharmacyItem.push(pharmacyItem[i])
+                }     
             } else {console.log('Error')}
-        }
         }
     }else if(department.toLowerCase() === 'exit'){
         console.log("Thank you for shopping with us!")
@@ -80,8 +97,8 @@ while (true){
     }else{
         console.log("Please choose a department.")
     }
-}
-
+    }
+    
 
 //toni adding items to array
 //taihlor checking if the arrays are full
